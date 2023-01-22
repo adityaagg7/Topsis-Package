@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
 
 setup(
     name="Topsis-Aditya-102003706",
-    version='0.1.1',
+    version='0.1.4',
     author='Aditya Aggarwal',
     author_email='aditya.agg7@gmail.com',
     description='Topsis, packaged for ease.',
