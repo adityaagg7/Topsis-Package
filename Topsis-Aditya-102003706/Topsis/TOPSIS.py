@@ -108,8 +108,8 @@ def main():
         sys.exit(
             "\n!!!ERROR!!!\nFILE \'f{data}\' NOT FOUND\n This tool accpets \'CSV\' files only!!\n")
 
-        n = df.shape[0]
-        c = df.shape[1]
+    n = df.shape[0]
+    c = df.shape[1]
 
     if (c <= 2):
         sys.exit("!!!!ERROR!!!!\n INPUT DATA SHOULD HAVE ATLEAST 3 COLUMNS!")
