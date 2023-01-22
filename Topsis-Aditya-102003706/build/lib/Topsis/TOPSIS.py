@@ -39,16 +39,14 @@ def topsis(input_data_file, weight, impact, output_file):
             sys.exit("\n!!!ERROR!!!\n RECHECK IMPACTS ASSIGNED!!!\n")
 
     for z, i in enumerate(df.iloc[0, 1:]):
-        # print(string.digits)
 
         if type(i) == str:
 
             label_encoder = preprocessing.LabelEncoder()
             df.iloc[:, z + 1] = label_encoder.fit_transform(df.iloc[:, z+1])
-    print(df)
 
     matrix = np.array(df.drop(['Fund Name'], axis=1))
-    print(matrix)
+
     matrix_sq = np.square(matrix)
     sum_col = np.sum(matrix_sq, axis=0)
     sqrt_sum_col = np.sqrt(sum_col)
@@ -108,8 +106,8 @@ def main():
         sys.exit(
             "\n!!!ERROR!!!\nFILE \'f{data}\' NOT FOUND\n This tool accpets \'CSV\' files only!!\n")
 
-        n = df.shape[0]
-        c = df.shape[1]
+    n = df.shape[0]
+    c = df.shape[1]
 
     if (c <= 2):
         sys.exit("!!!!ERROR!!!!\n INPUT DATA SHOULD HAVE ATLEAST 3 COLUMNS!")
