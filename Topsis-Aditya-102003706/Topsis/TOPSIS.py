@@ -4,14 +4,13 @@ import numpy as np
 import sys
 
 
-def topsis(data, weights, impacts, output):
+def topsis(input_data_file, weight, impact, output_file):
 
-    argument = sys.argv
     try:
-        data = argument[1]
-        weights = argument[2]
-        impacts = argument[3]
-        output = argument[4]
+        data = input_data_file
+        weights = weight
+        impacts = impact
+        output = output_file
     except:
         sys.exit("\n!!!!ERROR!!!\nTHERE IS SOME PROBLEM WITH THE ARGUMENTS!!!!\nTHE COMMAND TO BE USED IS: \npython3 main.py input_FILENAME.csv \"1,2,3,1,1\" \"\"-\",\"+\",\"+\",\"+\",\"+\"\" output_FILENAME.csv\n\n")
 
@@ -89,6 +88,7 @@ def topsis(data, weights, impacts, output):
 
     print(f"\n \nResult Stored at {output}")
     df.to_csv(output, index=False)
+    return df
 
 
 def main():
